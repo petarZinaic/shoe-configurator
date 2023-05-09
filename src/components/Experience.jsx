@@ -7,7 +7,10 @@ export default function Experience() {
     <>
       <Perf position="top-left" />
 
-      <OrbitControls makeDefaul enableDamping={true} />
+      <OrbitControls
+        makeDefaul
+        enableDamping={true}
+      />
 
       <Environment files="./environment/studio_small_01_1k.hdr" />
 
