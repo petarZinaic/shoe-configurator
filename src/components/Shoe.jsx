@@ -1,8 +1,21 @@
-import React from "react";
 import { useGLTF, Center } from "@react-three/drei";
+import { useControls } from "leva";
 
 export default function Shoe(props) {
   const { nodes, materials } = useGLTF("./models/nike-shoe-optimized.glb");
+
+  const { primaryColor, secoundaryColor } = useControls({
+    primaryColor: { value: "white" },
+    secoundaryColor: { value: "red" },
+  });
+
+  const nodeMaterials = {
+    primary: materials["material_1.001"],
+    secoundary: materials["material_2.001"],
+  };
+
+  nodeMaterials.primary.color.set(primaryColor);
+  nodeMaterials.secoundary.color.set(secoundaryColor);
 
   return (
     <Center>
@@ -12,91 +25,91 @@ export default function Shoe(props) {
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_1.geometry}
-            material={materials["material_1.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_2.geometry}
-            material={materials["material_2.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_3.geometry}
-            material={materials["material_3.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_4.geometry}
-            material={materials["material_4.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_5.geometry}
-            material={materials["material_5.001"]}
+            material={nodeMaterials.secoundary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_6.geometry}
-            material={materials["material_6.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_7.geometry}
-            material={materials["material_7.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_8.geometry}
-            material={materials["material_8.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_9.geometry}
-            material={materials["material_9.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_10.geometry}
-            material={materials["material_10.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_11.geometry}
-            material={materials["material_11.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_12.geometry}
-            material={materials["material_12.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_13.geometry}
-            material={materials["material_13.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_14.geometry}
-            material={materials["material_14.001"]}
+            material={nodeMaterials.primary}
           />
           <mesh
             castShadow
             receiveShadow
             geometry={nodes.Superstar001_15.geometry}
-            material={materials["material_15.001"]}
+            material={nodeMaterials.primary}
           />
         </group>
       </group>
